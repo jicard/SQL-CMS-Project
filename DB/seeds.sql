@@ -7,8 +7,8 @@ INSERT INTO roles (title, salary, department_id) VALUES ('Supervisor', 65000, 1)
 INSERT INTO roles (title, salary, department_id) VALUES ('Lead', 55000, 1);
 INSERT INTO roles (title, salary, department_id) VALUES ('Trainer', 45000, 1);
 INSERT INTO roles (title, salary, department_id) VALUES ('Associate', 35000, 1);
-INSERT INTO employees (id, first_name, last_name, role_id) VALUES (1, 'Matt', 'Brelia', 1);
-INSERT INTO employees (id, first_name, last_name, role_id, manager_id) VALUES (2, 'Josh', 'Icard', 2, 1);
-INSERT INTO employees (id, first_name, last_name, role_id, manager_id) VALUES (3, 'Devin', 'Kelly', 3, 2);
-INSERT INTO employees (id, first_name, last_name, role_id, manager_id) VALUES (4, 'Luke', 'Benton', 4, 2);
-INSERT INTO employees (id, first_name, last_name, role_id, manager_id) VALUES (5, 'Mike', 'Presnell', 5, 2);
+INSERT INTO employees (first_name, last_name, role_id) VALUES ('Matt', 'Brelia', 1);
+INSERT INTO employees (first_name, last_name, role_id, manager_id) VALUES ('Josh', 'Icard', 2, 1);
+INSERT INTO employees (first_name, last_name, role_id, manager_id) VALUES ('Devin', 'Kelly', 3, 2);
+INSERT INTO employees (first_name, last_name, role_id, manager_id) VALUES ('Luke', 'Benton', 4, 2);
+INSERT INTO employees (first_name, last_name, role_id, manager_id) VALUES ('Mike', 'Presnell', 5, 2);

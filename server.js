@@ -1,9 +1,82 @@
 const inquirer = require("inquirer");
 const db = require("./db/index");
-require("console.table");
 
-const mainMenu = () => {
-  return inquirer.prompt([
+function viewAllDepartments() {
+  console.log("Viewing all departments..");
+  db.viewAllDepartments()
+    .then(([rows]) => {
+      let departments = rows;
+      console.table(departments);
+    })
+    .then(() => mainMenu());
+}
+
+function viewAllRoles() {
+  console.log("Viewing all roles..");
+  db.viewAllRoles()
+    .then(([rows]) => {
+      let roles = rows;
+      console.table(roles);
+    })
+    .then(() => mainMenu());
+}
+
+function viewAllEmployees() {
+  console.log("Viewing all employees..");
+  db.viewAllEmployees()
+    .then(([rows]) => {
+      let employees = rows;
+      console.table(employees);
+    })
+    .then(() => mainMenu());
+}
+
+function addDepartment() {
+  console.log("Adding a department..");
+  db.addDepartment()
+    .then(([rows]) => {
+      let departments = rows;
+      console.table(departments);
+    })
+    .then(() => mainMenu());
+}
+
+function addRole() {
+  console.log("Adding a role..");
+  db.addRole()
+    .then(([rows]) => {
+      let roles = rows;
+      console.table(roles);
+    })
+    .then(() => mainMenu());
+}
+
+async function addEmployee() {
+  console.log("Adding an employee..");
+  db.addEmployee()
+  .then(([rows]) => {
+      let employees = rows;
+      console.table(employees);
+    })
+    .then(() => mainMenu());
+}
+
+function updateEmployeeRole() {
+  console.log("Updating an employee role..");
+  db.updateEmployeeRole()
+    .then(([rows]) => {
+      let roles = rows;
+      console.table(roles);
+    })
+    .then(() => mainMenu());
+}
+
+function exitApp() {
+  console.log("Thanks for using SQL CMS! Press CTRL+C to exit the terminal.");
+}
+
+async function mainMenu() {
+  await inquirer.prompt([
     {
       type: "list",
       message: "Main Menu",
@@ -15,85 +88,11 @@ const mainMenu = () => {
         "Add a department",
         "Add a role",
         "Add an employee",
-        "Update an employee role"
+        "Update an employee role",
+        "Exit"
       ],
     },
-  ]);
-};
-
-function viewAllDepartments() {
-  db.viewAllDepartments()
-    .then(([rows]) => {
-      let departments = rows;
-      console.table(departments);
-    })
-    .then(() => mainMenu());
-}
-
-function viewAllRoles() {
-  db.viewAllRoles()
-    .then(([rows]) => {
-      let roles = rows;
-      console.table(roles);
-    })
-    .then(() => mainMenu());
-}
-
-function viewAllEmployees() {
-  db.viewAllEmployees()
-    .then(([rows]) => {
-      let employee = rows;
-      console.table(employee);
-    })
-    .then(() => mainMenu());
-}
-
-function addDepartment() {
-  db.addDepartment()
-    .then(([rows]) => {
-      let departments = rows;
-      console.table(departments);
-    })
-    .then(() => mainMenu());
-}
-
-function addRole() {
-  db.addRole()
-    .then(([rows]) => {
-      let roles = rows;
-      console.table(roles);
-    })
-    .then(() => mainMenu());
-}
-
-function addEmployee() {
-  db.addEmployee()
-    .then(([rows]) => {
-      let employee = rows;
-      console.table(employee);
-    })
-    .then(() => mainMenu());
-}
-
-function updateEmployeeRole() {
-  db.updateEmployeeRole()
-    .then(([rows]) => {
-      let roles = rows;
-      console.table(roles);
-    })
-    .then(() => mainMenu());
-}
-
-function quit() {
-  db.quit()
-    .then(([rows]) => {
-      let departments = rows;
-      console.table(departments);
-    })
-    .then(() => mainMenu());
-}
-
-mainMenu().then((answer) => {
+  ]) .then((answer) => {
   switch (answer.choices) {
     case "View all departments":
       viewAllDepartments();
@@ -116,5 +115,11 @@ mainMenu().then((answer) => {
     case "Update an employee role":
       updateEmployeeRole();
       break;
+    case "Exit":
+      exitApp();
+      break;
   }
 });
+}
+
+mainMenu();

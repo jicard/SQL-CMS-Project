@@ -5,7 +5,7 @@ const connection = mysql.createConnection({
   password: "mysqlpassword",
   database: "sql_cms",
 });
-connection.connect(function (error) {
-  if (error) throw (error);
+connection.connect(function (err) {
+  if (err) console.log("The beatings will continue until morale improves.");
 });
 module.exports = connection;
