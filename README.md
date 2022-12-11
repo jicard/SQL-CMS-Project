@@ -26,4 +26,5 @@ Check out my GitHub profile! [jicard](https://github.com/jicard)
 <br />
 Contact me via email @ icardj@outlook.com
 ## Link
-[Josh's README Generator Repo](https://github.com/jicard/Node-Readme-Generator-Challenge)
+[Icard Inc. Employee Management System Repo](https://github.com/jicard/SQL-CMS-Project)
+[Demo/Walkthrough Video](https://app.castify.com/view/0144c3db-4999-428f-9220-6faf6af960f5)
