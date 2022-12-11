@@ -27,4 +27,5 @@ Check out my GitHub profile! [jicard](https://github.com/jicard)
 Contact me via email @ icardj@outlook.com
 ## Link
 [Icard Inc. Employee Management System Repo](https://github.com/jicard/SQL-CMS-Project)
+<br />
 [Demo/Walkthrough Video](https://app.castify.com/view/0144c3db-4999-428f-9220-6faf6af960f5)
