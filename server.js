@@ -1,5 +1,6 @@
 const inquirer = require("inquirer");
 const db = require("./db/index");
+//const cTable = require("console.table");
 
 function viewAllDepartments() {
   console.log("Viewing all departments..");
@@ -31,7 +32,7 @@ function viewAllEmployees() {
     .then(() => mainMenu());
 }
 
-function addDepartment() {
+async function addDepartment() {
   console.log("Adding a department..");
   db.addDepartment()
     .then(([rows]) => {
@@ -41,7 +42,7 @@ function addDepartment() {
     .then(() => mainMenu());
 }
 
-function addRole() {
+async function addRole() {
   console.log("Adding a role..");
   db.addRole()
     .then(([rows]) => {
@@ -61,12 +62,12 @@ async function addEmployee() {
     .then(() => mainMenu());
 }
 
-function updateEmployeeRole() {
+async function updateEmployeeRole() {
   console.log("Updating an employee role..");
   db.updateEmployeeRole()
     .then(([rows]) => {
-      let roles = rows;
-      console.table(roles);
+      let employees = rows;
+      console.table(employees);
     })
     .then(() => mainMenu());
 }
